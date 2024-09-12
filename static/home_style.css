@@ -1,0 +1,146 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: black;
+}
+
+a {
+    color: #FF9900;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+#preview_image {
+    width: 200px;
+    height: auto;
+    max-width: 33vw;
+    max-height: 33vh;
+}
+
+.upload_container {
+    line-height: 40px;
+    width: 90vw;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2a2626;
+    border-radius: 10px;
+    cursor: default;
+    margin: 20px auto;
+}
+
+.content-container {
+    max-width: 23vw;
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 6px;
+}
+
+.content-container > a > img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.content-container > a {
+    display: block;
+    max-width: 100%;
+    max-height: 90%;
+}
+
+.content-container h5 {
+    max-width: 100%;
+    max-height: 10%;
+    text-align: center;
+    color: white;
+}
+
+.content-container > h5 > a {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#content {
+    width: 96vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#logout {
+    text-align: right;
+}
+
+#submit_button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 10px;
+    width: 275px;
+    line-height: 40px;
+    color: white;
+    margin-bottom: 20px;
+    border: 0;
+    cursor: default;
+}
+
+.upload_button {
+    background-color: #FF9900;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    line-height: 40px;
+    width: 275px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+#search_bar {
+    width: 90vw;
+    line-height: 30px;
+    align-self: center;
+    margin-bottom: 5px;
+    background-color: #2a2626;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+}
+
+#search_bar::placeholder {
+    font-style: italic;
+}
+
+#search {
+    width: 90vw;
+    line-height: 12.5vh;
+    align-self: center;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: #2a2626;
+    border: 0;
+}

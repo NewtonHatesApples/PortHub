@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/index_style.css" type="text/css" />
+{% endblock %}
+
+{% block script %}
+    <script src="/static/search.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="login" style="display: inline-block; text-align: right">
+        <a href="/login">
+            <img src="/static/login.png" alt="login" style="height: 45px; width: 45px">
+        </a>
+    </div>
+    <label>
+        <input type="text" id="search_bar" onkeyup="load_search()" placeholder="Search users here ..." />
+    </label>
+    <iframe id="search" src="" hidden></iframe>
+    <div id="content">
+        {% for filename_author in filename_author_list %}
+            <div class="content-container">
+                <a href="/user_uploads/{{ filename_author[0] }}" target="_blank">
+                    <img src="/user_uploads/{{ filename_author[0] }}" alt="user_uploads" id="{{ filename_author[0] }}" />
+                </a>
+                <h5>
+                    Uploaded by <a href="/profile/{{ filename_author[1] }}">{{ filename_author[1] }}</a>
+                </h5>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/home_style.css" type="text/css"/>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/upload.js"></script>
+    <script src="/static/search.js"></script>
+{% endblock %}
+
+{% block body %}
+    <h3 id="logout"><a href="/logout">Log out</a></h3>
+    <div id="user_id">
+        {% if session["username"] %}
+            <h2>Hello, {{ session["username"] }}!</h2>
+        {% else %}
+            <h2>You are not logged in!</h2>
+        {% endif %}
+    </div>
+    <label>
+        <input type="text" id="search_bar" onkeyup="load_search()" placeholder="Search users here ..." />
+    </label>
+    <iframe id="search" src="" hidden></iframe>
+    <h4>Customize your profile <a href="/profile/{{ session.get("username") }}">here</a>!</h4>
+    <div class="upload_container">
+        <form action="/home" id="upload" method="post" enctype="multipart/form-data">
+            <h3>Upload your files here, file size must be less than 1.5MB!</h3>
+            <button type="button" class="upload_button" onclick="document.getElementById('upload_file').click()">Choose a file ...</button>
+            <input type="file" id="upload_file" name="upload_file" accept="image/*" onchange="previewFile()" hidden/>
+            <input type="hidden" value={{ session["username"] }} name="user" />
+            <br>
+            <input type="submit" id="submit_button" value="Upload your file" disabled>
+        </form>
+        <img id="preview_image" src="" alt="Preview" hidden/>
+    </div>
+    <div id="content">
+        {% for filename_author in filename_author_list %}
+            <div id="{{ filename_author[0] }}" class="content-container">
+                <a href="/user_uploads/{{ filename_author[0] }}" target="_blank">
+                    <img src="/user_uploads/{{ filename_author[0] }}" alt="user_uploads"/>
+                </a>
+                <h5>
+                    Uploaded by <a href="/profile/{{ filename_author[1] }}">{{ filename_author[1] }}</a>
+                </h5>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

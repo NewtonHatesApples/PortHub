@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/login_style.css" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+    <div id="Sign_In_Box">
+        <h1>User Sign In</h1>
+        <h4>Access your Porthub Account</h4>
+        <form action="/login" method="post" novalidate>
+            <br><label><input id="username" autocomplete="off" name="username" placeholder="Username" type="text" size="50px"></label><br>
+            <br><label><input id="password" autocomplete="off" name="password" type="password" placeholder="Password" size="50px"></label><br>
+            <br>
+            <button type="submit" id="submit_button">Sign In</button>
+        </form>
+        <h4 style="color: green">{{ register_message }}</h4>
+        <h4 style="color: red">{{ login_message }}</h4>
+        <h3>Don't have an account yet? <a href="/register">Sign Up</a> here</h3>
+        <h3>
+            <a href="/">Go back</a>
+        </h3>
+    </div>
+{% endblock %}

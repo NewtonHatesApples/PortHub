@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block style %}{% endblock %}
+    {% block script %}{% endblock %}
+    <meta name="viewport" charset="UTF-8" content="initial-scale=1, width=device-width">
+    <title>Porthub</title>
+</head>
+<body>
+    <div id="logo">
+        <a href="/">
+            <img src="/static/favicon.ico" alt="Logo" style="width: 140px; height: 65px" />
+        </a>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>

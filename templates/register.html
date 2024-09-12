@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/register_style.css" type="text/css" />
+{% endblock %}
+
+{% block script %}
+    <script src="/static/register.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="register_box">
+        <h2>Sign Up for Free</h2>
+        <h4>and enhance your experience</h4>
+        <form action="/register" name="register" method="post" novalidate>
+            <label>
+                <input id="username" onkeyup="get_sum()" name="username" type="text" autocomplete="off" placeholder="Username (4-16 characters)">
+            </label>
+            <br><br>
+            <label>
+                <input id="password" onkeyup="get_sum()" name="password" type="password" autocomplete="off" placeholder="Password (at least 8 characters)">
+            </label>
+            <br><br>
+            <button type="submit" id="submit_button" disabled>Register</button>
+            <h4 style="color: red">{{ register_message }}</h4>
+        </form>
+        <h4>Already have an account? <a href="/login">Login</a> here</h4>
+        <h4>By signing up, you agree to our <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Terms and Conditions</a>.</h4>
+        <h3>
+            <a href="/">Go back</a>
+        </h3>
+    </div>
+{% endblock %}

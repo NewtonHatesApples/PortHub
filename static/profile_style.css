@@ -1,0 +1,127 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: black;
+}
+
+a:link, a:visited, a:active, a:hover{
+    color: #FF9900;
+}
+
+#username {
+    color: white;
+    text-align: center;
+}
+
+.content-container {
+    max-width: 23vw;
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 6px;
+}
+
+.content-container > a > img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.content-container > a {
+    display: block;
+    max-width: 100%;
+    max-height: 90%;
+}
+
+.content-container h5 {
+    max-width: 100%;
+    max-height: 10%;
+    text-align: center;
+    color: white;
+}
+
+.content-container > h5 > a {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#content {
+    width: 96vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#profile {
+    text-align: left;
+}
+
+#upload_line {
+    text-align: center;
+    width: 100%;
+}
+
+#profile_line {
+    text-align: center;
+    width: 100%;
+}
+
+#new_profile {
+    white-space: pre;
+    tab-size: 4;
+    width: 96vw;
+    height: 20vh;
+    resize: none;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+#home {
+    text-align: right;
+}
+
+.content-container h1, h2, h3, h4, h5, h6 {
+    color: white;
+    text-align: left;
+}
+
+#search_bar {
+    width: 90vw;
+    line-height: 30px;
+    align-self: center;
+    margin-bottom: 5px;
+    background-color: #2a2626;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+}
+
+#search_bar::placeholder {
+    font-style: italic;
+}
+
+#search {
+    width: 90vw;
+    line-height: 12.5vh;
+    align-self: center;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: #2a2626;
+    border: 0;
+}
+
+#submit_button, #edit {
+    line-height: 40px;
+    width: 275px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: #ff9900;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin: 6px auto;
+    border: 0;
+}

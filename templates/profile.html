@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/static/profile_style.css" />
+{% endblock %}
+
+{% block script %}
+    <script src="/static/search.js"></script>
+    <script src="/static/profile.js"></script>
+{% endblock %}
+
+{% block body %}
+    <label>
+        <input type="text" id="search_bar" onkeyup="load_search()" placeholder="Search users here ..." />
+    </label>
+    <iframe id="search" src="" hidden></iframe>
+    <h1 id="username">{{ username }}</h1>
+    {% if session.get("username") %}
+        <h3 id="home"><a href="/home">Go back home</a></h3>
+    {% endif %}
+    {% if session.get("username") != username and session.get("username") %}
+        <h3 id="message"><a href="">Message {{ username }}</a></h3>
+    {% endif %}
+    <h3 id="profile_line">-- {{ username }}'s profile --</h3>
+    {% if profile == "" %}
+        <h3 id="profile">{{ username }} has not created a profile yet.</h3>
+    {% else %}
+        <h3 id="profile">{{ profile }}</h3>
+    {% endif %}
+    {% if session.get("username") == username %}
+        <form action="/profile/{{ username }}" method="post">
+            <label>
+                <textarea autofocus name="new_profile" id="new_profile" maxlength="500" rows="10" autocomplete="off" placeholder="Your new profile here ... (Maximum 500 characters)" hidden></textarea>
+            </label>
+            <input type="hidden" name="username" value="{{ username }}" />
+            <button type="button" id="edit">Edit profile ...</button>
+            <input type="submit" value="Update profile" id="submit_button">
+        </form>
+        <h4 style="color: red">{{ update_message }}</h4>
+    {% endif %}
+    <h3 id="upload_line">-- {{ username }}'s uploads --</h3>
+    <div id="content" class="content">
+        <div id="content">
+        {% if uploads == [] %}
+                <h3>{{ username }} has no uploads yet.</h3>
+        {% else %}
+            {% for upload in uploads %}
+                <div id="{{ upload[0] }}" class="content-container">
+                    <a href="/user_uploads/{{ upload[0] }}" target="_blank">
+                        <img src="/user_uploads/{{ upload[0] }}" alt="user_uploads"/>
+                    </a>
+                    <h5>
+                        Uploaded by <a href="/profile/{{ upload[1] }}">{{ upload[1] }}</a>
+                    </h5>
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

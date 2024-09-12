@@ -1,0 +1,39 @@
+#title .container-fluid{
+    padding: 0 15% 7%;
+    text-align: left;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: black;
+}
+
+a:link, a:visited, a:active, a:hover{
+    color: #FF9900;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+  }
+
+input {
+    line-height: 35px;
+    width: 375px;
+}
+
+button {
+    line-height: 40px;
+    width: 160px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2a2626;
+    border-radius: 10px;
+    cursor: default;
+    color: white;
+    margin: 0;
+    border: 0;
+}

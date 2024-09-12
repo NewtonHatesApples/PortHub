@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/info_style.css" />
+{% endblock %}
+
+{% block body %}
+    <h1>Porthub Statistics</h1>
+
+    <h2>As at HKT {{ time_now }},</h2>
+    <h3>Number of users: {{ user_count }}</h3>
+    <h3>Number of uploads: {{ upload_count }}</h3>
+    <h4>Refresh to get the latest statistics.</h4>
+{% endblock %}

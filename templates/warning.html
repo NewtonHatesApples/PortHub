@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/warning.css" type="text/css" />
+    <meta name="viewport" charset="UTF-8" content="initial-scale=1 width=device-width">
+    <title>Porthub</title>
+</head>
+<body>
+    <div id="logo">
+        <img src="/static/favicon.ico" alt="logo" style="width: 140px; height: 65px; align-self: center"/>
+    </div>
+    <div id="warning" class="container">
+        <h2>This is not an adult website</h2>
+        <h4>This website contains non-age-restricted materials including novelty and explicit depictions of casual activity. By entering, you affirm that you are at least 8 years of age or the age of majority in the jurisdiction you are accessing the website from, and you consent to viewing casually explicit content.</h4>
+        <h4>This website is not to be affiliated with any third parties.</h4>
+        <form id="agree_form" name="agree_form" action="/warning" method="post">
+            <a>
+                <button type="submit" name="agree" id="agree" value="agree">I am 8 or older - Enter</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <button type="submit" name="disagree" id="disagree" value="disagree">I am under 8 - Exit</button>
+            </a>
+        </form>
+    </div>
+</body>
